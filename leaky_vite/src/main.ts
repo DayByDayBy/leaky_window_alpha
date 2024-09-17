@@ -1,6 +1,6 @@
+const apiKey = import.meta.env.VITE_WEATHER_API_KEY;
 const infoDiv = document.getElementById("info") as HTMLElement;
 const weatherText = document.getElementById("weather-text") as HTMLElement;
-const apiKey = import.meta.env.VITE_WEATHER_API_KEY;
 
 if (!infoDiv || !weatherText) {
     throw new Error("Required DOM elements are missing.");
@@ -67,7 +67,7 @@ camButton.addEventListener("click", () => {
     navigator.mediaDevices
         .getUserMedia({ video: true })
         .then((stream) => {
-            camResult.innerText = "Camera access granted";
+            camResult.innerText = "camera access granted";
             camButton.style.display = "none";
         })
         .catch(() => {
@@ -117,7 +117,7 @@ function fetchWeatherByIP() {
         })
         .catch(() => {
             weatherText.innerText = "Unable to fetch weather based on IP. Trying default...";
-            fetchWeatherByCity('New York'); // fallback to a default city if IP-based fails
+            fetchWeatherByCity('New York'); // Fallback to a default city if IP-based fails
         });
 }
 
