@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Browser Leakage Info</title>
+  <title>leaky windows</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -64,19 +64,19 @@
   <script>
     const infoDiv = document.getElementById("info");
 
-    // Fetch user IP address
+    // fetching user IP address
     fetch("https://api.ipify.org?format=json")
       .then((response) => response.json())
       .then((data) => {
         infoDiv.children[0].innerHTML = `<strong>Your IP:</strong> ${data.ip}`;
       });
 
-    // User Agent, Screen Size, Timezone
+    // user agent, screen size, timezone
     infoDiv.children[1].innerHTML = `<strong>Your User Agent:</strong> ${navigator.userAgent}`;
     infoDiv.children[2].innerHTML = `<strong>Your Screen Size:</strong> ${window.screen.width}x${window.screen.height}`;
     infoDiv.children[3].innerHTML = `<strong>Your Timezone:</strong> ${Intl.DateTimeFormat().resolvedOptions().timeZone}`;
 
-    // Battery Info (if supported)
+    // battery info (if supported)
     if ("getBattery" in navigator) {
       navigator.getBattery().then(function (battery) {
         infoDiv.children[4].innerHTML = `<strong>Battery Level:</strong> ${battery.level * 100}%`;
@@ -85,17 +85,17 @@
       infoDiv.children[4].innerHTML = "<strong>Battery Level:</strong> Not supported";
     }
 
-    // Network Information (if supported)
+    // network info (if supported)
     if (navigator.connection) {
       infoDiv.children[5].innerHTML = `<strong>Network Connection:</strong> ${navigator.connection.effectiveType}, Downlink: ${navigator.connection.downlink} Mb/s`;
     } else {
       infoDiv.children[5].innerHTML = "<strong>Network Connection:</strong> Not supported";
     }
 
-    // Referrer
+    // referrer
     infoDiv.children[6].innerHTML = `<strong>Referrer:</strong> ${document.referrer || "No referrer"}`;
 
-    // Geolocation (with user consent)
+    // geolocation (with user consent)
     const geoButton = document.getElementById("geo-button");
     const geoResult = document.getElementById("geo-result");
 
@@ -111,7 +111,7 @@
       );
     });
 
-    // Camera access (with user consent)
+    // cam access (with user consent)
     const camButton = document.getElementById("cam-button");
     const camResult = document.getElementById("cam-result");
 

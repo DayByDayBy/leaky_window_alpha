@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>leaky windows</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    h1 {
+      color: #333;
+    }
+    #leakage-data {
+      margin-top: 20px;
+    }
+    p {
+      margin: 5px 0;
+    }
+    .permission-button {
+      display: inline-block;
+      margin-top: 5px;
+      padding: 5px 10px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    .secure-message {
+      font-size: 0.9em;
+      color: green;
+    }
+    input {
+      display: block;
+      margin: 10px 0;
+    }
+  </style>
+</head>
+<body>
+  <h1>Browser Leakage Information</h1>
+  <div id="leakage-data">
+    <form id="autofill-form">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" autocomplete="name" placeholder="Name" />
+      
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" autocomplete="email" placeholder="Email" />
+      
+      <label for="tel">Phone:</label>
+      <input type="tel" id="tel" name="tel" autocomplete="tel" placeholder="Phone" />
+      
+      <label for="address">Address:</label>
+      <input type="text" id="address" name="address" autocomplete="street-address" placeholder="Address" />
+    </form>
+
+    <div id="info">
+      <p><strong>Your IP:</strong> Fetching...</p>
+      <p><strong>Your User Agent:</strong> </p>
+      <p><strong>Your Screen Size:</strong> </p>
+      <p><strong>Your Timezone:</strong> </p>
+      <p><strong>Battery Level:</strong> </p>
+      <p><strong>Network Connection:</strong> </p>
+      <p><strong>Referrer:</strong> </p>
+      <p><strong>Geolocation:</strong> 
+        <span id="geo-result">Not accessed</span>
+        <button id="geo-button" class="permission-button">Allow Location Access</button>
+      </p>
+      <p><strong>Camera Access:</strong> 
+        <span id="cam-result">Not accessed</span>
+        <button id="cam-button" class="permission-button">Allow Camera Access</button>
+      </p>
+    </div>
+  </div>
+
+   <!-- weather report section -->
+   <div id="weather-report">
+    <h3>Weather Report</h3>
+    <p id="weather-text">Fetching weather data...</p>
+  </div>
+</div>
+
+
+<script type="module" src="/src/main.ts"></script>
+
+</body>
+</html>
