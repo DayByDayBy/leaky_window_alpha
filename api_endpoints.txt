@@ -1,0 +1,37 @@
+{
+"ip": "",
+"network": "",
+"version": "",
+"city": "",
+"region": "",
+"region_code": "",
+"country": "",
+"country_name": "",
+"country_code": "",
+"country_code_iso3": "",
+"country_capital": "",
+"country_tld": "",
+"continent_code": "",
+"in_eu": false,
+"postal": "",
+"latitude": 1,
+"longitude": 2,
+"timezone": "",
+"utc_offset": "",
+"country_calling_code": "",
+"currency": "",
+"currency_name": "",
+"languages": "",
+"country_area": 3,
+"country_population": 4,
+"asn": "",
+"org": ""
+}
+
+
+
+// i reckon it's worth using all of these too
+
+// just takes an ip, and hitting this address with it:  https://ipapi.co/${data.ip}/json/
+// IP easily grabbed via, eg, https://api.ipify.org?format=json
+
